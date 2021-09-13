@@ -6,7 +6,7 @@ local LocalPlayer = Players.LocalPlayer
 local accomidationfactor = 0.165
 
 -- // Silent Aim Module
-local SilentAim = loadstring(game:HttpGet("https://pastebin.com/raw/XmDDaZV8"))()
+local SilentAim = loadstring(game:HttpGet("https://pastebin.com/raw/9e9veJZd"))()
 SilentAim.TeamCheck = false
 
 -- // Metatable vars
@@ -29,8 +29,8 @@ mt.__index = newcclosure(function(t, k)
         print(t, k)
         local CPlayer = SilentAim.Selected
         if (SilentAim.checkSilentAim()) then
-            if (CPlayer.Character:FindFirstChild("Head")) then
-                return {p=(CPlayer.Character.Head.CFrame.p+(CPlayer.Character.Head.Velocity*accomidationfactor))}
+            if (CPlayer.Character:FindFirstChild("LowerTorso")) then
+                return {p=(CPlayer.Character.LowerTorso.CFrame.p+(CPlayer.Character.LowerTorso.Velocity*accomidationfactor))}
             end
         end
     end
@@ -39,3 +39,4 @@ end)
 
 -- // Revert
 setreadonly(mt, true)
+end)
