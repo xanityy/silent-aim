@@ -26,7 +26,7 @@ end
 -- // Hook
 mt.__index = newcclosure(function(t, k)
     if (t:IsA("Mouse") and (k == "Hit")) then
-        print(t, k)
+        --print(t, k)
         local CPlayer = SilentAim.Selected
         if (SilentAim.checkSilentAim()) then
             if (CPlayer.Character:FindFirstChild("LowerTorso")) then
